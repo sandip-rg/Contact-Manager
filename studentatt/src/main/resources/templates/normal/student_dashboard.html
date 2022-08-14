@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title>Student Dashboard</title>
+</head>
+<body>
+	<section>
+		<div class="container">
+			<!-- 			<div class="card"> -->
+			<!-- 				<div class="card-body"> -->
+			<div class="container text-center">
+
+					<img src="" style="height: 200px; width: 200px;"
+						class="profile_picture" th:src="@{'/img/contact_logo.png'}"
+						alt="profile photo" />
+				<h1 class="w3-jumbo w3-animate-top w3-center">
+					<code>Smart Contact Manager</code>
+				</h1>
+				<hr class="w3-border-white w3-animate-left"
+					style="margin: auto; width: 50%">
+				<h3 class="w3-center w3-animate-right">Start Adding your
+					contacts on cloud...</h3>
+				<h3 class="w3-center w3-animate-zoom">
+					<i class="fa-solid fa-phone"></i>&nbsp;<i class="fa-solid fa-phone"></i>&nbsp;<i
+						class="fa-solid fa-phone"></i>&nbsp;<i class="fa-solid fa-phone"></i>&nbsp;
+				</h3>
+				<h6 class="w3-center w3-animate-zoom">make your life smarter with <code>Smart Contact Manager</code></h6>
+				<a th:href="@{/student/add-contact}" class="btn btn-primary mt-4 btn-block text-uppercase">Add Contacts</a>
+			</div>
+		</div>
+		<!-- 				</div> -->
+		<!-- 			</div> -->
+		<script>
+			$(document).ready(() =>{
+			$(".item").removeClass("active");
+			$("#home-link").addClass("active");
+			})
+		</script>
+	</section>
+</body>
+</html>
