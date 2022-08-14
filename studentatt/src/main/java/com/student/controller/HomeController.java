@@ -20,7 +20,7 @@ import com.student.model.Student;
 
 @Controller
 public class HomeController {
-	
+
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
 
@@ -85,8 +85,8 @@ public class HomeController {
 			return "signup";
 		}
 	}
-	
-	//handler for custom login
+
+	// handler for custom login
 	@GetMapping("/signin")
 	public String customLogin(Model model) {
 		model.addAttribute("title", "Login - Student Attendance");

@@ -20,9 +20,10 @@ public class SearchController {
 	private StudentRepository studentRepository;
 	@Autowired
 	private ContactRepository contactRepository;
-	//search handler
+
+	// search handler
 	@GetMapping("/search/{query}")
-	public ResponseEntity<?> search(@PathVariable("query") String query, Principal principal){
+	public ResponseEntity<?> search(@PathVariable("query") String query, Principal principal) {
 		System.out.println(query);
 		Student student = this.studentRepository.getUserByUserName(principal.getName());
 		List<Contact> contacts = this.contactRepository.findByNameContainingAndStudent(query, student);

@@ -225,24 +225,24 @@ public class StudentController {
 	@PostMapping("/change-password")
 	public String changePassword(@RequestParam("oldPassword") String oldPassword,
 			@RequestParam("newPassword") String newPassword, Principal pricipal, HttpSession session) {
-		System.out.println("Old pass "+oldPassword);
-		System.out.println("New pass "+newPassword);
-		
+		System.out.println("Old pass " + oldPassword);
+		System.out.println("New pass " + newPassword);
+
 		String userName = pricipal.getName();
 		Student currentStudent = this.studentRepository.getUserByUserName(userName);
-		System.out.println("password: " +currentStudent.getPassword());
-		
-		if(this.bCryptPasswordEncoder.matches(oldPassword, currentStudent.getPassword())) {
-			//change the password
+		System.out.println("password: " + currentStudent.getPassword());
+
+		if (this.bCryptPasswordEncoder.matches(oldPassword, currentStudent.getPassword())) {
+			// change the password
 			currentStudent.setPassword(this.bCryptPasswordEncoder.encode(newPassword));
 			this.studentRepository.save(currentStudent);
 			session.setAttribute("message", new Message("Password changed successfully...", "success"));
-		}else {
-			//error
+		} else {
+			// error
 			session.setAttribute("message", new Message("Please enter correct Old Password!!", "danger"));
 			return "redirect:/student/settings";
 		}
-		
+
 		return "redirect:/student/index";
 	}
 }

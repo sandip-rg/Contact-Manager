@@ -9,10 +9,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.student.model.Student;
 
-public class CustomStudentDetails implements UserDetails{
-	
+public class CustomStudentDetails implements UserDetails {
+
 	private Student student;
-	
+
 	public CustomStudentDetails(Student student) {
 		super();
 		this.student = student;
