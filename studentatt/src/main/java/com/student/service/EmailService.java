@@ -17,7 +17,7 @@ import jakarta.mail.internet.MimeMessage;
 public class EmailService {
 	public boolean sendEmail(String subject, String message, String to) {
 		boolean f = false;
-		 String from = "sandiprg19@gmail.com";
+		 String from = "sandip@gmail.com";
 		 
 		 //variable for email
 		 String host = "smtp.gmail.com";
@@ -40,7 +40,7 @@ public class EmailService {
 			@Override
 			protected PasswordAuthentication getPasswordAuthentication() {
 				// TODO Auto-generated method stub
-				return new PasswordAuthentication("sandiprg19@gmail.com", "Sandip@1999");
+				return new PasswordAuthentication("sandip@gmail.com", "sandip123");
 			}
 			 
 		});
